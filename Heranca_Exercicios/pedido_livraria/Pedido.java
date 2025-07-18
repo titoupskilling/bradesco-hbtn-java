@@ -1,5 +1,3 @@
-import produtos.Livro;
-
 public class Pedido {
     double percentualDesconto;
     ItemPedido[] itens;
@@ -18,22 +16,23 @@ public class Pedido {
     }
 
     public void apresentarResumoPedido(){
+        double totalPedido = 0.0;
         System.out.printf("------- RESUMO PEDIDO -------\n");
         for (ItemPedido itemPedido : itens) {
-            if(itemPedido.getProduto() instanceof Livro){
-                System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %d  Total: %.2f",
-                itemPedido.getProduto().getClass(), 
-                itemPedido.getProduto().getTitulo(), 
-                itemPedido.getProduto().getPrecoBruto(),
-                itemPedido.getQuantidade(),
-                itemPedido.getQuantidade());
-            }
+            double total = itemPedido.getQuantidade() * itemPedido.getProduto().obterPrecoLiquido();
+            System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %d  Total: %.2f\n",
+            itemPedido.getProduto().getClass().getSimpleName(), 
+            itemPedido.getProduto().getTitulo(), 
+            itemPedido.getProduto().obterPrecoLiquido(),
+            itemPedido.getQuantidade(),
+            total);
+            totalPedido += total;
         }
         System.out.printf("----------------------------\n");
-        System.out.printf("DESCONTO: 6,67\n");
-        System.out.printf("TOTAL PRODUTOS: 133,36\n");
+        System.out.printf("DESCONTO: %.2f\n", (percentualDesconto / 100) * totalPedido);
+        System.out.printf("TOTAL PRODUTOS: %.2f\n", totalPedido);
         System.out.printf("----------------------------\n");
-        System.out.printf("TOTAL PEDIDO: 126,69\n");
+        System.out.printf("TOTAL PEDIDO: %.2f\n", totalPedido - ((percentualDesconto / 100) * totalPedido));
         System.out.printf("----------------------------\n");
     }
 }
