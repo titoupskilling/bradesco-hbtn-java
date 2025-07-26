@@ -32,7 +32,7 @@ public class ContaBancariaBasica {
     public void sacar(double valor) throws OperacaoInvalidaException {
         if(valor <= 0){
             throw new OperacaoInvalidaException("Valor de saque deve ser maior que 0");
-        } if((this.saldo - valor) <= 0){
+        } if((this.saldo - valor) < 0){
             throw new OperacaoInvalidaException("Valor de saque deve ser menor que o saldo atual");
         } else {
             this.saldo -= valor;
