@@ -5,26 +5,29 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class FileWritingExercise {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Solicita o nome do arquivo
-        System.out.print("Digite o nome do arquivo (com extensão .txt): ");
-        String fileName = scanner.nextLine();
-        FileWriter fr = new FileWriter(new File(fileName));
-        BufferedWriter br = new BufferedWriter(fr);
+        try {
+            // Solicita o nome do arquivo
+            System.out.print("Digite o nome do arquivo (com extensão .txt): ");
+            String fileName = scanner.nextLine();
+            FileWriter fr = new FileWriter(new File(fileName));
+            BufferedWriter br = new BufferedWriter(fr);
 
-        System.out.print("Digite a proxima linha de texto: ");
-        String txtLine = scanner.nextLine();
-        br.append(txtLine);
-        while (!txtLine.equals("sair")) {
-            System.out.print("Digite a proxima linha de texto: ");
-            txtLine = scanner.nextLine();
+            String txtLine = "";
             br.append(txtLine);
-        }
+            while (!txtLine.equals("sair")) {
+                System.out.print("Digite a proxima linha de texto: ");
+                txtLine = scanner.nextLine();
+                br.append(txtLine);
+            }
 
-        System.out.print("o arquivo foi criado e seu conteudo foi salvo com sucesso.");
-        br.close();
+            System.out.print("o arquivo foi criado e seu conteudo foi salvo com sucesso.");
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         scanner.close();
     }
 }
