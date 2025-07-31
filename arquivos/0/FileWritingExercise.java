@@ -22,7 +22,7 @@ public class FileWritingExercise {
             String txtLine = "";
             System.out.print("Digite a proxima linha de texto: ");
             txtLine = scanner.nextLine();
-            while (!txtLine.equals("sair")) {
+            while (!txtLine.contains("sair")) {
                 br.append(txtLine + "\n");
                 System.out.print("Digite a proxima linha de texto: ");
                 txtLine = scanner.nextLine();
