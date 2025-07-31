@@ -12,6 +12,10 @@ public class FileWritingExercise {
             // Solicita o nome do arquivo
             System.out.print("Digite o nome do arquivo (com extensão .txt): ");
             String fileName = scanner.nextLine();
+            if(fileName.contains("sair")){
+                scanner.close();
+                return;
+            }
             FileWriter fr = new FileWriter(new File(fileName));
             BufferedWriter br = new BufferedWriter(fr);
 
