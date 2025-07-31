@@ -19,7 +19,6 @@ public class CsvFileReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println();
         System.out.println("Leitura do arquivo concluída.");
     }
 }
