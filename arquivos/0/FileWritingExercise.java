@@ -12,7 +12,7 @@ public class FileWritingExercise {
             // Solicita o nome do arquivo
             System.out.print("Digite o nome do arquivo (com extensão .txt): ");
             String fileName = scanner.nextLine();
-            if(fileName.contains("sair")){
+            if(fileName.contains("sair") || fileName.contains("break")){
                 scanner.close();
                 return;
             }
@@ -22,7 +22,7 @@ public class FileWritingExercise {
             String txtLine = "";
             System.out.print("Digite a proxima linha de texto: ");
             txtLine = scanner.nextLine();
-            while (!txtLine.contains("sair")) {
+            while (!txtLine.contains("sair") || !txtLine.contains("break")) {
                 br.append(txtLine + "\n");
                 System.out.print("Digite a proxima linha de texto: ");
                 txtLine = scanner.nextLine();
