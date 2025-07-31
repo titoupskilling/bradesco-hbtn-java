@@ -20,11 +20,12 @@ public class FileWritingExercise {
             BufferedWriter br = new BufferedWriter(fr);
 
             String txtLine = "";
-            br.append(txtLine);
+            System.out.print("Digite a proxima linha de texto: ");
+            txtLine = scanner.nextLine();
             while (!txtLine.equals("sair")) {
+                br.append(txtLine + "\n");
                 System.out.print("Digite a proxima linha de texto: ");
                 txtLine = scanner.nextLine();
-                br.append(txtLine);
             }
 
             System.out.print("o arquivo foi criado e seu conteudo foi salvo com sucesso.");
