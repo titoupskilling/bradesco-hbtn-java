@@ -27,7 +27,7 @@ public class ArrayExercicio {
             if(maiorNumero < numero){
                 maiorNumero = numero;
             }
-            soma =+ numero;
+            soma = soma + numero;
         }
         
         System.out.print("\n\n\n");
