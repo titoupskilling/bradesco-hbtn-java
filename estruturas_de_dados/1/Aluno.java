@@ -2,7 +2,7 @@ public class Aluno {
 
     private String nome;
     private int idade;
-    
+
     public String getNome() {
         return nome;
     }
@@ -14,5 +14,10 @@ public class Aluno {
     }
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
