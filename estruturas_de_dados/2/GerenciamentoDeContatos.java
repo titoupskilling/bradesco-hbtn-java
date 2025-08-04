@@ -30,7 +30,7 @@ public class GerenciamentoDeContatos {
     public void exibirContatos() {
         this.contatos.forEach(
             (chave, contato) -> {
-                System.out.println("Contato encontrado: " + chave);
+                System.out.println("Nome: " + chave);
                 contato.exibirContato();
                 System.out.println("-------------------------------");
         });
@@ -41,7 +41,7 @@ public class GerenciamentoDeContatos {
     public void buscarContato(String nome) {
         Contato contato = this.contatos.get(nome);
         if(contato != null){
-            System.out.println("Nome: " + nome);
+            System.out.println("Contato encontrado: " + nome);
             contato.exibirContato();
         } else {
             System.out.println(String.format("Erro: Contato com nome %s não existe!", nome));
