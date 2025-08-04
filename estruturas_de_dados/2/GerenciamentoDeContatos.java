@@ -18,6 +18,7 @@ public class GerenciamentoDeContatos {
         contato.adicionarEmail(email);
         contato.adicionarTelefone(telefone);
         this.contatos.put(nome, contato);
+        System.out.println(String.format("Contato %s adicionado com sucesso!", nome));
     }
 
 
