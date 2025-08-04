@@ -30,7 +30,7 @@ public class GerenciamentoDeContatos {
     public void exibirContatos() {
         this.contatos.forEach(
             (chave, contato) -> {
-                System.out.println("Nome: " + chave);
+                System.out.println("Contato encontrado: " + chave);
                 contato.exibirContato();
                 System.out.println("-------------------------------");
         });
