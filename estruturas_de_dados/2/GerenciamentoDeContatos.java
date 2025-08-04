@@ -28,6 +28,7 @@ public class GerenciamentoDeContatos {
             (chave, contato) -> {
                 System.out.println("Nome: " + chave);
                 contato.exibirContato();
+                System.out.println("-------------------------------");
         });
     }
 
