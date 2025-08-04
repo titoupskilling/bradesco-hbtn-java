@@ -14,25 +14,32 @@ public class GerenciamentoDeContatos {
 
     // Adiciona um novo contato
     public void adicionarContato(String nome, String telefone, String email) {
-    // IMPLEMENTE ESTE METODO
+        Contato contato = new Contato();
+        contato.adicionarEmail(email);
+        contato.adicionarTelefone(telefone);
+        this.contatos.put(nome, contato);
     }
 
 
     // Exibe todos os contatos
     public void exibirContatos() {
-    // IMPLEMENTE ESTE METODO
+        this.contatos.forEach(
+            (chave, contato) -> {
+                System.out.println("Nome: " + chave);
+                contato.exibirContato();
+        });
     }
 
 
     // Busca um contato pelo nome
     public void buscarContato(String nome) {
-        // IMPLEMENTE ESTE METODO
+        this.contatos.get(nome);
     }
 
 
     // Remove um contato pelo nome
     public void removerContato(String nome) {
-        // IMPLEMENTE ESTE METODO
+        this.contatos.remove(nome);
     }
 
 
