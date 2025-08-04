@@ -14,7 +14,7 @@ public class GerenciamentoDeContatos {
 
     // Adiciona um novo contato
     public void adicionarContato(String nome, String telefone, String email) {
-        if(this.contatos.get(nome) != null){
+        if(this.contatos.get(nome) == null){
             Contato contato = new Contato();
             contato.adicionarEmail(email);
             contato.adicionarTelefone(telefone);
