@@ -14,11 +14,15 @@ public class GerenciamentoDeContatos {
 
     // Adiciona um novo contato
     public void adicionarContato(String nome, String telefone, String email) {
-        Contato contato = new Contato();
-        contato.adicionarEmail(email);
-        contato.adicionarTelefone(telefone);
-        this.contatos.put(nome, contato);
-        System.out.println(String.format("Contato %s adicionado com sucesso!", nome));
+        if(this.contatos.get(nome) != null){
+            Contato contato = new Contato();
+            contato.adicionarEmail(email);
+            contato.adicionarTelefone(telefone);
+            this.contatos.put(nome, contato);
+            System.out.println(String.format("Contato %s adicionado com sucesso!", nome));
+        } else {
+            System.out.println(String.format("Erro: Contato com nome %s já existe!", nome));
+        }
     }
 
 
@@ -35,13 +39,24 @@ public class GerenciamentoDeContatos {
 
     // Busca um contato pelo nome
     public void buscarContato(String nome) {
-        this.contatos.get(nome);
+        Contato contato = this.contatos.get(nome);
+        if(contato != null){
+            System.out.println("Nome: " + nome);
+            contato.exibirContato();
+        } else {
+            System.out.println(String.format("Erro: Contato com nome %s não existe!", nome));
+        }
     }
 
 
     // Remove um contato pelo nome
     public void removerContato(String nome) {
-        this.contatos.remove(nome);
+        Contato contato = this.contatos.remove(nome);
+        if(contato != null) {
+            System.out.println(String.format("Contato %s removido com sucesso!", nome));
+        } else {
+            System.out.println(String.format("Contato %s não encontrado.", nome));
+        }
     }
 
 
