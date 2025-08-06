@@ -20,7 +20,7 @@ public class PessoasArray {
     // implementar o método de buscaBinaria
     public void buscaBinaria(String nome){
         boolean encontrado = false;
-        System.out.println(String.format("Procurando pelo nome: \"%s\"", nome));
+        System.out.println(String.format("Procurando o nome: \"%s\"", nome));
 
         int low = 0;
         int high = nomes.length - 1;
@@ -28,9 +28,9 @@ public class PessoasArray {
         while (low <= high) {
             int mid = low + (high - low) / 2; // Previne overflow
 
-            System.out.println(String.format("Passando pelo indice:%d", mid));
+            System.out.println(String.format("Passando pelo indice: %d", mid));
             if (nomes[mid] == nome) {
-                System.out.println(String.format("Nome pesquisado é %s que está na posição %d", nome, mid));
+                System.out.println(String.format("Nome %s encontrado na posição %d", nome, mid));
                 encontrado = true;
                 break;
             } else if (nomes[mid].compareTo(nome) < 0) {
