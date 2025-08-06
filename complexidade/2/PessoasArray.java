@@ -33,9 +33,7 @@ public class PessoasArray {
                 System.out.println(String.format("Nome pesquisado é %s que está na posição %d", nome, mid));
                 encontrado = true;
                 break;
-            } else 
-
-            if (nomes[mid].compareTo(nome) < 0) {
+            } else if (nomes[mid].compareTo(nome) < 0) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
