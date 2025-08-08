@@ -12,9 +12,7 @@ public class Biblioteca<T extends Midia> {
 
     public char[] obterListaMidias() {
         String retorno = "";
-        for (int index = 0; index < lista.size(); index++) {
-            retorno = retorno.concat(lista.get(index).toString());
-        }
+        retorno = lista.toString();
         return retorno.toCharArray();
     }
     
