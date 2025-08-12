@@ -17,7 +17,7 @@ public class Pedido {
     public int obterTotalCaixas() {
         int retorno = 0;
         for (int i = 0; i < cookies.size(); i++) {
-            retorno =+ cookies.get(i).getQuantidadeCaixas();
+            retorno += cookies.get(i).getQuantidadeCaixas();
         }
         return retorno;
     }
