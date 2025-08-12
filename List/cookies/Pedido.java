@@ -28,7 +28,7 @@ public class Pedido {
         while (iterator.hasNext()) {
             PedidoCookie item = iterator.next();
             if(item.getSabor().equals(sabor)){
-                retorno = item.getQuantidadeCaixas();
+                retorno += item.getQuantidadeCaixas();
                 iterator.remove();
             }
         }
