@@ -17,11 +17,11 @@ public class Autor implements Comparable{
         this.nome = nome;
     }
 
-    public String getSobreNome() {
+    public String getSobrenome() {
         return sobrenome;
     }
 
-    public void setSobreNome(String sobreNome) {
+    public void setSobrenome(String sobreNome) {
         this.sobrenome = sobreNome;
     }
 
