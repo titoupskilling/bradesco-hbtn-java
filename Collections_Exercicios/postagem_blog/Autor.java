@@ -1,8 +1,8 @@
 public class Autor implements Comparable{
 
-    private String nome;
+    String nome;
 
-    private String sobrenome;
+    String sobrenome;
 
     public Autor(String nome, String sobreNome) {
         this.nome = nome;
