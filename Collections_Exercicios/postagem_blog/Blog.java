@@ -51,6 +51,11 @@ public class Blog {
 
     public Set<Post> obterPostsPorAutor(Autor autor) {
         Set<Post> lista = new java.util.TreeSet<>((p1, p2) -> p1.getTitulo().compareToIgnoreCase(p2.getTitulo()));
+        for (Post post : postagens) {
+            if (post.getAutor().equals(autor)) {
+                lista.add(post);
+            }
+        }
         return lista;
     }
 
