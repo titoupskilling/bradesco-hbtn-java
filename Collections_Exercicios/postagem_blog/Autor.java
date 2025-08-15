@@ -2,11 +2,11 @@ public class Autor implements Comparable{
 
     private String nome;
 
-    private String sobreNome;
+    private String sobrenome;
 
     public Autor(String nome, String sobrenome) {
         this.nome = nome;
-        this.sobreNome = sobrenome;
+        this.sobrenome = sobrenome;
     }
 
     public String getNome() {
@@ -17,19 +17,18 @@ public class Autor implements Comparable{
         this.nome = nome;
     }
 
-    public String getSobreNome() {
-        return sobreNome;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setSobreNome(String sobreNome) {
-        this.sobreNome = sobreNome;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     @Override
     public String toString() {
-        return String.format("%s %s", nome, sobreNome);
+        return String.format("%s %s", nome, sobrenome);
     }
-
 
     @Override
     public int compareTo(Object o) {
@@ -37,6 +36,6 @@ public class Autor implements Comparable{
         Autor outro = (Autor) o;
         int cmpNome = this.nome.compareToIgnoreCase(outro.nome);
         if (cmpNome != 0) return cmpNome;
-        return this.sobreNome.compareToIgnoreCase(outro.sobreNome);
+        return this.sobrenome.compareToIgnoreCase(outro.sobrenome);
     }
 }
