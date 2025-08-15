@@ -1,4 +1,16 @@
-public class Autor implements Comparable{
+public class Autor implements Comparable<Autor> {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Autor autor = (Autor) o;
+        return nome.equalsIgnoreCase(autor.nome) && sobrenome.equalsIgnoreCase(autor.sobrenome);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(nome.toLowerCase(), sobrenome.toLowerCase());
+    }
 
     private String nome;
 
@@ -31,9 +43,7 @@ public class Autor implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        if (!(o instanceof Autor)) return -1;
-        Autor outro = (Autor) o;
+    public int compareTo(Autor outro) {
         int cmpNome = this.nome.compareToIgnoreCase(outro.nome);
         if (cmpNome != 0) return cmpNome;
         return this.sobrenome.compareToIgnoreCase(outro.sobrenome);
