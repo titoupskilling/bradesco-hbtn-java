@@ -12,10 +12,16 @@ public class Produtor extends Thread {
     @Override
     public void run() {
         try {
-            fila.adicionar(new Random().nextInt(100));
+            fila.adicionar(random());
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+
+    private int random() {
+        return new Random().nextInt(100);
+    }
+    
 }
