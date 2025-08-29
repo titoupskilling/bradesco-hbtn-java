@@ -10,5 +10,11 @@ public class SistemaFilas {
         prod2.start();
         cons1.start();
         cons2.start();
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.exit(0);
     }
 }
