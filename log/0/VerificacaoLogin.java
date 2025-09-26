@@ -1,0 +1,38 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class VerificacaoLogin {
+
+
+    // Inicialização do logger
+    private static final java.util.logging.Logger logger = LoggerFactory.getLogger(VerificacaoLogin.class);
+    public static void main(String[] args) {
+        // Simulação de entradas do usuário
+        String usuarioCorreto = "admin";
+        String senhaCorreta = "12345";
+
+        // Tentativas de login
+        realizarLogin("admin", "12345", usuarioCorreto, senhaCorreta); // Login correto
+        realizarLogin("admin", "senhaErrada", usuarioCorreto, senhaCorreta); // Senha incorreta
+        realizarLogin("usuarioDesconhecido", "12345", usuarioCorreto, senhaCorreta); // Usuário desconhecido
+    }
+
+
+    public static void realizarLogin(String usuario, String senha, String usuarioCorreto, String senhaCorreta) {
+        logger.error(String.format("Tentativa de login com o usuário: %s", usuario));
+        if(!usuario.equals(usuarioCorreto)){
+            logger.error(String.format("Senha incorreta para o usuário: %s", usuario));
+        } else if(!senha.equals(senhaCorreta)){
+            logger.error(String.format("Usuário %s não encontrado!", usuario));
+        } else if(senha.equals(senhaCorreta) && usuario.equals(usuarioCorreto)){
+            logger.info(String.format("Login bem-sucedido para o usuário: %s", usuario));
+        }
+    }
+}
+
+[main] INFO VerificacaoLogin -- Tentativa de login com o usuário: admin
+[main] INFO VerificacaoLogin -- Login bem-sucedido para o usuário: admin
+[main] INFO VerificacaoLogin -- Tentativa de login com o usuário: admin
+[main] ERROR VerificacaoLogin -- Senha incorreta para o usuário: admin
+[main] INFO VerificacaoLogin -- Tentativa de login com o usuário: usuarioDesconhecido
+[main] WARN VerificacaoLogin -- Usuário usuarioDesconhecido não encontrado!
