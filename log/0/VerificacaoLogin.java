@@ -23,16 +23,9 @@ public class VerificacaoLogin {
         if(!usuario.equals(usuarioCorreto)){
             logger.error(String.format("Senha incorreta para o usuário: %s", usuario));
         } else if(!senha.equals(senhaCorreta)){
-            logger.warm(String.format("Usuário %s não encontrado!", usuario));
+            logger.warn(String.format("Usuário %s não encontrado!", usuario));
         } else if(senha.equals(senhaCorreta) && usuario.equals(usuarioCorreto)){
             logger.info(String.format("Login bem-sucedido para o usuário: %s", usuario));
         }
     }
 }
-
-[main] INFO VerificacaoLogin -- Tentativa de login com o usuário: admin
-[main] INFO VerificacaoLogin -- Login bem-sucedido para o usuário: admin
-[main] INFO VerificacaoLogin -- Tentativa de login com o usuário: admin
-[main] ERROR VerificacaoLogin -- Senha incorreta para o usuário: admin
-[main] INFO VerificacaoLogin -- Tentativa de login com o usuário: usuarioDesconhecido
-[main] WARN VerificacaoLogin -- Usuário usuarioDesconhecido não encontrado!
