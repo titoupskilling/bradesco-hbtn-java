@@ -23,7 +23,7 @@ public class VerificacaoLogin {
         if(!usuario.equals(usuarioCorreto)){
             logger.error(String.format("Senha incorreta para o usuário: %s", usuario));
         } else if(!senha.equals(senhaCorreta)){
-            logger.error(String.format("Usuário %s não encontrado!", usuario));
+            logger.warm(String.format("Usuário %s não encontrado!", usuario));
         } else if(senha.equals(senhaCorreta) && usuario.equals(usuarioCorreto)){
             logger.info(String.format("Login bem-sucedido para o usuário: %s", usuario));
         }
