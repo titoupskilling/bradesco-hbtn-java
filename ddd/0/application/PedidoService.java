@@ -24,7 +24,8 @@ public class PedidoService {
 
 
     public void adicionarProduto(String pedidoId, Produto produto) {
-        // implementar
+        Pedido pedido = new Pedido();
+        pedidoRepository.salvar(pedido);
     }
 
 
