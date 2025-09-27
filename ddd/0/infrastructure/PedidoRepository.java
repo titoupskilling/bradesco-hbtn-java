@@ -20,6 +20,6 @@ public class PedidoRepository {
 
 
     public Pedido buscarPorId(String id) {
-        return pedidos.get(pedido.getId());
+        return pedidos.get(id);
     }
 }
